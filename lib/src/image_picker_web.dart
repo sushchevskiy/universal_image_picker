@@ -24,6 +24,8 @@ class UniversalImagePicker implements ImagePickerInterface {
           fileUploaded.add(reader.result);
         });
         reader.readAsArrayBuffer(files[0]);
+      } else {
+        fileUploaded.add(null);
       }
     });
   }
