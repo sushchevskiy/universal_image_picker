@@ -17,9 +17,20 @@ class UniversalImagePicker implements ImagePickerInterface {
     uploadInput.accept = 'image/*';
     reader = new FileReader();
     uploadInput.onChange.listen((e) {
+      print('IMAGE +++++++++++++++');
+      print(e);
+      print('IMAGE +++++++++++++++');
+
       final files = uploadInput.files;
+      print('FILES +++++++++++++++');
+      print(files);
+      print('FILES +++++++++++++++');
+
       if (files.length == 1) {
         reader.onLoadEnd.listen((e) {
+          print('FILES LOAD +++++++++++++++');
+          print(e);
+          print('FILES LOAD +++++++++++++++');
           // file = reader.result;
           fileUploaded.add(reader.result);
         });
