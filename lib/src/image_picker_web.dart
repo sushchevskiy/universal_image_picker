@@ -12,10 +12,12 @@ class UniversalImagePicker implements ImagePickerInterface {
   StreamController<Uint8List> fileUploaded;
 
   UniversalImagePicker() {
+    print('IMAGE PICKER CREATED +++++++++++++++');
     fileUploaded = new StreamController();
     uploadInput = new FileUploadInputElement();
     uploadInput.accept = 'image/*';
     reader = new FileReader();
+    print('IMAGE READER CREATED +++++++++++++++');
     uploadInput.onChange.listen((e) {
       print('IMAGE +++++++++++++++');
       print(e);
