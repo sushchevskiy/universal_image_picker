@@ -18,6 +18,41 @@ class UniversalImagePicker implements ImagePickerInterface {
     uploadInput.accept = 'image/*';
     reader = new FileReader();
     print('IMAGE READER CREATED +++++++++++++++');
+    uploadInput.onError.listen((event) {
+      print('IMAGE ERROR +++++++++++++++');
+      print(event);
+      print('IMAGE ERROR +++++++++++++++');
+    });
+    uploadInput.onReset.listen((event) {
+      print('IMAGE RESET +++++++++++++++');
+      print(event);
+      print('IMAGE RESET +++++++++++++++');
+    });
+    uploadInput.onClick.listen((event) {
+      print('IMAGE CLICK +++++++++++++++');
+      print(event);
+      print('IMAGE CLICK +++++++++++++++');
+    });
+    uploadInput.onEmptied.listen((event) {
+      print('IMAGE onEmptied +++++++++++++++');
+      print(event);
+      print('IMAGE onEmptied +++++++++++++++');
+    });
+    uploadInput.onEnded.listen((event) {
+      print('IMAGE onEnded +++++++++++++++');
+      print(event);
+      print('IMAGE onEnded +++++++++++++++');
+    });
+    uploadInput.onInvalid.listen((event) {
+      print('IMAGE onInvalid +++++++++++++++');
+      print(event);
+      print('IMAGE onInvalid +++++++++++++++');
+    });
+    uploadInput.onInput.listen((event) {
+      print('IMAGE onInput +++++++++++++++');
+      print(event);
+      print('IMAGE onInput +++++++++++++++');
+    });
     uploadInput.onChange.listen((e) {
       print('IMAGE +++++++++++++++');
       print(e);
