@@ -6,12 +6,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:universal_image_picker/src/image_picker_interface.dart';
 
 class UniversalImagePicker implements ImagePickerInterface {
-  Future<Uint8List> pickImage(ImageSource source) async {
+  Future<Uint8List> pickImage(ImageSource source, {String fileType}) async {
     final completer = Completer<Uint8List>();
 
     final InputElement uploadInput = querySelector('#fileloader');
     uploadInput.value = '';
-    uploadInput.accept = 'image/*';
+    uploadInput.accept = fileType ?? 'image/*';
     uploadInput.click();
     uploadInput.onChange.first.then((e) {
       final files = uploadInput.files;
